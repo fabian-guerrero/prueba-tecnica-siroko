@@ -313,6 +313,26 @@ fieldset{
     font-weight: 700;
 }
 
+.code-and-message{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.code-copied-message{
+    font-family: "Inconsolata", sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: rgb(51, 155, 149);
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.code-copied-message.active{
+    opacity: 1;
+    transition: opacity 0.2s ease-in-out;
+}
+
 .button-copy-code{
     font-family: "Inconsolata", sans-serif;
     font-size: 14px;
@@ -320,6 +340,13 @@ fieldset{
     border: 2px solid rgb(0,0,0);
     padding: 6px 8px;
     background-color: transparent;
+    opacity: 1;
+    transition: background-color 0.2s ease-in-out, opacity 0.2s ease-in-out;
+}
+
+.button-copy-code:hover{
+    background-color: rgb(255,255,255);
+    opacity: 0.7;
 }
 
 .success-wrapper{

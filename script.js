@@ -2,6 +2,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const radioInputs = document.querySelectorAll('input[type="radio"]');
     const steps = document.querySelectorAll('.step');
     const nextButtons = document.querySelectorAll('.button-next');
+    const copyButton = document.querySelector(".button-copy-code");
+
     let currentStep = 0;
 
     function initializeCheckedStates() {
@@ -66,6 +68,31 @@ document.addEventListener('DOMContentLoaded', () => {
         const codeElement = document.querySelector(".code");
         codeElement.textContent = generatedCode;
     }
+
+    copyButton.addEventListener("click", (e) => {
+        e.preventDefault();
+        const codeElement = document.querySelector(".code");
+        const codeText = codeElement.textContent;
+        const codeCopiedMessage = document.querySelector(".code-copied-message");
+        console.log("codeCopiedMessage ", codeCopiedMessage);
+
+        if (codeText) {
+            navigator.clipboard
+            .writeText(codeText)
+            .then(() => {
+                console.log("Código copiado al portapapeles: " + codeText);
+                codeCopiedMessage.classList.add("active");
+                setTimeout(() => {
+                    codeCopiedMessage.classList.remove("active");
+                  }, "4000");
+            })
+            .catch((err) => {
+                console.error("Error al copiar el código: ", err);
+            });
+        } else {
+            console.error("No hay código para copiar.");
+        }
+    });
 
     showStep(currentStep);
     initializeCheckedStates();
