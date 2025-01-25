@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Siroko technical test">
+    <title>Prueba Técnica Siroko</title>
+    <link defer rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+    <link rel="preload" fetchpriority="high" as="image" href="./images/background.webp" type="image/webp">
+</head>
+<body>
+    <section class="main">
+        <header class="header">
+            <picture>
+                <source srcset="./images/logo-with-brand-name.svg" media="(min-width: 834px)" width="145" height="35"/>
+                <img src="./images/logo.svg" alt="Siroko logo" width="28" height="32"/>
+            </picture>
+        </header>
+        <form class="form-container">
+            <div class="step step1 current">
+                <span class="pill">
+                    <p class="pill-text">Paso 1 de 2</p>
+                </span>
+                <header class="form-steps-header">
+                    <p class="main-copy liberator-heavy">¡Vamos allá!</p>
+                    <p class="secondary-copy inconsolata mobile-copy">Has llegado hasta el test de Siroko. Responde las siguientes preguntas y genera tu código premiado a medida.</p>
+                    <p class="secondary-copy inconsolata desktop-copy">Has llegado hasta el test de Siroko. Responde las siguientes preguntas y genera tu código a medida.</p>
+                </header>
+                <div class="options-wrapper">
+                    <fieldset>
+                        <legend class="fieldset-legend">Uso Siroko desde...</legend>
+                        <label class="option" for="useSirokoSince1">
+                            <input type="radio" id="useSirokoSince1" name="useSiroko" value="2016" checked="checked" />
+                            <span class="custom-radio"></span>
+                            2016
+                        </label>
+                        <label class="option" for="useSirokoSince2">
+                            <input type="radio" id="useSirokoSince2" name="useSiroko" value="2017" />
+                            <span class="custom-radio"></span>
+                            2017
+                        </label>
+                        <label class="option" for="useSirokoSince3">
+                            <input type="radio" id="useSirokoSince3" name="useSiroko" value="2018" />
+                            <span class="custom-radio"></span>
+                            2018
+                        </label>
+                        <label class="option" for="useSirokoSince4">
+                            <input type="radio" id="useSirokoSince4" name="useSiroko" value="2019" />
+                            <span class="custom-radio"></span>
+                            2019
+                        </label>
+                        <label class="option" for="useSirokoSince5">
+                            <input type="radio" id="useSirokoSince5" name="useSiroko" value="2020" />
+                            <span class="custom-radio"></span>
+                            2020
+                        </label>
+                        <label class="option" for="useSirokoSince6">
+                            <input type="radio" id="useSirokoSince6" name="useSiroko" value="2021" />
+                            <span class="custom-radio"></span>
+                            2021
+                        </label>
+                    </fieldset>
+                    <button class="button-next"><span class="button-copy">Siguiente</span><span class="button-icon material-icons">arrow_right_alt</span></button>
+                </div>
+            </div>
+            <div class="step step2">
+                <span class="pill">
+                    <p class="pill-text">Paso 2 de 2</p>
+                </span>
+                <header class="form-steps-header">
+                    <p class="main-copy liberator-heavy">Vamos, una más</p>
+                </header>
+                <div class="options-wrapper">
+                    <fieldset>
+                        <legend class="fieldset-legend">Por unas gafas siroko, yo...</legend>
+                        <label class="option" for="forSirokoGlasses1">
+                            <input type="radio" id="forSirokoGlasses1" name="forSirokoGlasses" value="Segaría a navaja" checked/>
+                            <span class="custom-radio"></span>
+                            Segaría a navaja
+                        </label>
+                        <label class="option" for="forSirokoGlasses2" >
+                            <input type="radio" id="forSirokoGlasses2" name="forSirokoGlasses" value="Rechazaría un cachopo" />
+                            <span class="custom-radio"></span>
+                            Rechazaría un cachopo
+                        </label>
+                        <label class="option" for="forSirokoGlasses3">
+                            <input type="radio" id="forSirokoGlasses3" name="forSirokoGlasses" value="Renunciaría a mis tierras" />
+                            <span class="custom-radio"></span>
+                            Renunciaría a mis tierras
+                        </label>
+                        <label class="option" for="forSirokoGlasses4">
+                            <input type="radio" id="forSirokoGlasses4" name="forSirokoGlasses" value="Regalaría una ternera" />
+                            <span class="custom-radio"></span>
+                            Regalaría una ternera
+                        </label>
+                    </fieldset>
+                    <button class="button-next"><span class="button-copy">Siguiente</span><span class="button-icon material-icons">arrow_right_alt</span></button>
+                </div>    
+            </div>
+            <div class="step step2-2">
+                <span class="pill">
+                    <p class="pill-text">Tu premio está listo</p>
+                </span>
+                <header class="form-steps-header">
+                    <p class="main-copy liberator-heavy">¡Enhorabuena!</p>
+                </header>   
+                <div class="options-wrapper">
+                    <p class="fieldset-legend">Lo prometido es deuda</p>
+                    <div class="success-wrapper">
+                        <div class="code-wrapper">
+                            <span class="code">8HOPO</span>
+                            <button class="button-copy-code">Copiar</button>
+                        </div>
+                        <p class="secondary-copy inconsolata">Introduce este código en tu próxima compra para conseguir tu premio. ¡Disponible durante 20 minutos!</p>
+                        <div class="countdown-wrapper">
+                            <span class="material-icons">alarm</span>
+                            <p class="remaining-time">20:00</p>
+                            <p class="expired-message">Código caducado. <span class="reboot">Reiniciar</span>.</p>
+                        </div>
+                        <a class="green-button" href="https://www.siroko.com/"><span class="button-copy">Ir a siroko.com</span><span class="button-icon material-icons">arrow_right_alt</span></a>
+                    </div>
+                </div>      
+            </div>
+        </form>
+    </section>
+    <footer class="footer inconsolata">
+        <div class="footer-content">
+            <p>2016-2021 Siroko Solutions S.L.</p>
+            <p>Todos los derechos reservados. <a href="#">Ver bases.</a></p>
+        </div>        
+    </footer>
+</body>
+</html>
