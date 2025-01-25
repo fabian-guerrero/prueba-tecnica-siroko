@@ -3,8 +3,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const steps = document.querySelectorAll('.step');
     const nextButtons = document.querySelectorAll('.button-next');
     const copyButton = document.querySelector(".button-copy-code");
+    const countdownElement = document.querySelector(".remaining-time");
+    const countdownWrapper = document.querySelector(".countdown-wrapper");
+    const expiredMessage = document.querySelector(".expired-message");
+    const countdownTime = document.querySelector(".countdown-time");
 
     let currentStep = 0;
+    const countdownMinutes = 1;
+    const countdownDuration = countdownMinutes * 60;
+    let countdownInterval;
 
     function initializeCheckedStates() {
         radioInputs.forEach((radio) => {
@@ -29,6 +36,37 @@ document.addEventListener('DOMContentLoaded', () => {
         input.addEventListener('change', handleRadioChange);
     });
 
+    function startCountdown(duration) {
+        countdownTime.textContent =  Math.floor(countdownDuration / 60);;
+        let remainingTime = duration;
+
+        countdownElement.textContent = formatTime(remainingTime);
+
+        expiredMessage.style.display = "none";
+
+        if (countdownInterval) {
+            clearInterval(countdownInterval);
+        } 
+
+        countdownInterval = setInterval(() => {
+            if (remainingTime > 0) {
+                remainingTime--;
+                countdownElement.textContent = formatTime(remainingTime);
+            } else {
+                clearInterval(countdownInterval);
+                countdownWrapper.classList.add("expired");
+                countdownElement.style.display = "none";
+                expiredMessage.style.display = "block";
+            }
+        }, 1000);
+    }
+       
+    function formatTime(seconds) {
+        const minutes = Math.floor(seconds / 60);
+        const secs = seconds % 60;
+        return `${String(minutes).padStart(2, "0")}:${String(secs).padStart(2, "0")}`;
+    }   
+
     function showStep(index) {
         steps.forEach((step, i) => {
             if (i === index) {
@@ -50,6 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (currentStep === steps.length - 1) {
                 generateCode();
+                startCountdown(countdownDuration);
             }
         });
     });
