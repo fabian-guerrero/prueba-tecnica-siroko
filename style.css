@@ -1,5 +1,8 @@
 :root {
-    --container-max-width: 940px
+    --container-max-width: 940px;
+    --color-white: rgb(255,255,255);
+    --color-black: rgb(0,0,0);
+    --color-gray: rgb(187,187,187);
 }
 
 
@@ -10,8 +13,6 @@ button{
     text-decoration: none;
     cursor: pointer;
     text-align: center;
-    /* transition: background 250ms ease-in-out, 
-                transform 150ms ease; */
     -webkit-appearance: none;
     -moz-appearance: none;
 }
@@ -119,7 +120,7 @@ body{
 }
 
 .main-copy, .secondary-copy{
-    color:rgb(255,255,255);
+    color: var(--color-white);
 }
 
 .main-copy + .secondary-copy{
@@ -185,9 +186,10 @@ fieldset{
     align-items: center;
     gap: 10px;
     padding: 12px;
-    color: rgb(255,255,255);
+    color: var(--color-white);
     background-color: rgba(255,255,255,0.09);
     transition: background-color 0.2s ease-in-out;
+    border-radius: 4px;
 
     font-family: "Inconsolata", sans-serif;
     font-weight: 400;
@@ -196,7 +198,7 @@ fieldset{
 }
 
 .option input{
-    /* display: none; */
+    display: none;
 }
 
 .option.checked{
@@ -211,7 +213,7 @@ fieldset{
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    border: 2px solid rgb(255,255,255);
+    border: 2px solid var(--color-white);
 }
 
 .option input:checked ~ .custom-radio:after {
@@ -224,7 +226,7 @@ fieldset{
     display: inline-block;
     width: 8px;
     height:8px;
-    background-color: rgb(255,255,255);
+    background-color: var(--color-white);
     border-radius: 50%;
     opacity: 0;
 }
@@ -232,7 +234,7 @@ fieldset{
 .button-next, .green-button{
     appearance: none;
     background-color:rgba(51, 155, 149,1);
-    color: rgb(255,255,255);
+    color: var(--color-white);
     border-radius: 4px;
     padding: 12px;
     max-height: 44px;
@@ -259,11 +261,11 @@ fieldset{
 
 }
 
-.button-next:hover{
+.button-next:hover, .green-button:hover{
     background-color:rgba(51, 155, 149,0.8);
 }
 
-.button-next:hover .button-icon{
+.button-next:hover .button-icon, .green-button:hover .button-icon{
     position: relative;
     left: 5px;
 }
@@ -274,7 +276,7 @@ fieldset{
     border-radius: 3px;
     gap: 10px;
     padding: 10px;
-    color: rgb(255,255,255);
+    color: var(--color-white);
     background-color: rgb(44, 12, 35);
 }
 
@@ -303,7 +305,7 @@ fieldset{
     align-items: center;
     padding: 10px;
     border-radius: 2px;
-    background: linear-gradient(270deg, rgb(255, 255, 255) 0%, rgb(189, 189, 189) 100%);
+    background: linear-gradient(270deg, var(--color-white) 0%, rgb(189, 189, 189) 100%);
 }
 
 .code{
@@ -337,7 +339,7 @@ fieldset{
     font-family: "Inconsolata", sans-serif;
     font-size: 14px;
     font-weight: 700;
-    border: 2px solid rgb(0,0,0);
+    border: 2px solid var(--color-black);
     padding: 6px 8px;
     background-color: transparent;
     opacity: 1;
@@ -345,7 +347,7 @@ fieldset{
 }
 
 .button-copy-code:hover{
-    background-color: rgb(255,255,255);
+    background-color: var(--color-white);
     opacity: 0.7;
 }
 
@@ -366,14 +368,33 @@ fieldset{
     line-height: 18.72px;
 }
 
-.expired-message .reboot{
-    cursor: pointer;
-    text-decoration: underline;
+.expired-message .reboot-button{
+    font-family: "Inconsolata", sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 18.72px;
+    background-color: transparent;
+    color: var(--color-white);
+    padding: 0;
+}
+
+.expired-message .reboot-button:after{
+    content:"";
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: var(--color-white);
+    transition: width 0.2s ease-in-out;
+    margin: 0 auto;
+}
+
+.expired-message .reboot-button:hover:after{
+    width: 70%;
 }
 
 .footer{
     padding: 25px;
-    background-color: rgb(0,0,0);
+    background-color: var(--color-black);
 }
 
 .footer-content{
@@ -387,11 +408,11 @@ fieldset{
 }
 
 .footer-content p{
-    color: rgb(187,187,187);
+    color: var(--color-gray);
 }
 
 .footer-content a{
-    color: rgb(187,187,187);
+    color: var(--color-gray);
     font-weight: 700;
 }
 

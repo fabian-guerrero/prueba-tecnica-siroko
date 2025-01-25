@@ -7,9 +7,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const countdownWrapper = document.querySelector(".countdown-wrapper");
     const expiredMessage = document.querySelector(".expired-message");
     const countdownTime = document.querySelector(".countdown-time");
+    const rebootButton = document.querySelector(".reboot-button");
 
     let currentStep = 0;
-    const countdownMinutes = 1;
+    const countdownMinutes = 20;
     const countdownDuration = countdownMinutes * 60;
     let countdownInterval;
 
@@ -131,6 +132,27 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             console.error("No hay código para copiar.");
         }
+    });
+
+    function resetForm() {
+        document.querySelectorAll("input[type='radio']").forEach((input) => {
+            input.checked = input.defaultChecked;
+            console.log("input.checked ", input.checked);
+            if (!input.checked){
+                input.parentElement.classList.remove("checked");
+            }
+        });
+
+        currentStep = 0;
+        showStep(currentStep);
+
+        countdownWrapper.classList.remove("expired");
+        countdownElement.style.display = "block";
+        expiredMessage.style.display = "none";
+    }
+
+    rebootButton.addEventListener("click", () => {
+        resetForm();
     });
 
     showStep(currentStep);
