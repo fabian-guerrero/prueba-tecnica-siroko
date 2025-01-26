@@ -1,22 +1,4 @@
-:root {
-    --container-max-width: 940px;
-    --color-white: rgb(255,255,255);
-    --color-black: rgb(0,0,0);
-    --color-gray: rgb(187,187,187);
-}
-
-
-button{
-    display: inline-block;
-    border: none;
-    margin: 0;
-    text-decoration: none;
-    cursor: pointer;
-    text-align: center;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-}
-
+/* Typography */
 @font-face {
     font-family: "liberator-heavy";
     src:
@@ -40,6 +22,18 @@ button{
     font-family: "Material Icons";
     src:
       url('./fonts/MaterialIcons-Regular.ttf') format('truetype');
+}
+
+.liberator-heavy{
+    font-family: liberator-heavy;
+}
+
+.inconsolata{
+    font-family: "Inconsolata", sans-serif;
+}
+
+.inter{
+    font-family: "Inter", sans-serif;
 }
 
 .material-icons {
@@ -67,16 +61,24 @@ button{
     font-feature-settings: 'liga';
 }
 
-.liberator-heavy{
-    font-family: liberator-heavy;
+/* Custom properties */
+:root {
+    --container-max-width: 940px;
+    --color-white: rgb(255,255,255);
+    --color-black: rgb(0,0,0);
+    --color-gray: rgb(187,187,187);
 }
 
-.inconsolata{
-    font-family: "Inconsolata", sans-serif;
-}
-
-.inter{
-    font-family: "Inter", sans-serif;
+/* General styles */
+button{
+    display: inline-block;
+    border: none;
+    margin: 0;
+    text-decoration: none;
+    cursor: pointer;
+    text-align: center;
+    -webkit-appearance: none;
+    -moz-appearance: none;
 }
 
 p{
@@ -136,18 +138,12 @@ body{
     margin-bottom: 25px;
 }
 
-.options-wrapper{
-    border-radius: 3px;
-    padding: 20px;
-    background-color: rgb(49, 20,41);
-}
-
 .main{
     padding: 25px;
     flex-grow: 1;
     background-image: url("./images/background.webp");
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: center top;
     background-size: cover;
 }
 
@@ -179,6 +175,12 @@ fieldset{
     font-size: 12px;
     line-height: 16.44px;
     text-transform: uppercase;
+}
+
+.options-wrapper{
+    border-radius: 3px;
+    padding: 20px;
+    background-color: rgb(49, 20,41);
 }
 
 .option{
@@ -339,6 +341,7 @@ fieldset{
     font-family: "Inconsolata", sans-serif;
     font-size: 14px;
     font-weight: 700;
+    color: var(--color-black);
     border: 2px solid var(--color-black);
     padding: 6px 8px;
     background-color: transparent;
