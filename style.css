@@ -72,6 +72,10 @@
 }
 
 /* General styles */
+html{
+    height: 100%;
+}
+
 button{
     display: inline-block;
     border: none;
